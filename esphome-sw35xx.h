@@ -28,11 +28,6 @@ public:
     if (sw35xx == nullptr) {
       sw35xx = new SW35xx(wire);
       sw35xx->begin();
-      // Set the max current if you like.
-      // Please note that the max current is limited by the board. If you set a
-      // higher value, the chip will likely overheat.
-      sw35xx->setMaxCurrentsFixed(5000, 5000, 5000, 5000, 5000);
-      sw35xx->setMaxCurrentsPPS(5000, 5000);
     }
   }
   bool isInitialized() { return sw35xx != nullptr; }
