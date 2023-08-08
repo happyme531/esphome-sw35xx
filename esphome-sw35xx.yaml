@@ -37,12 +37,12 @@ sensor:
   - platform: custom
     lambda: |-
       auto sw35xxNumberSensors = new ESPHomeSW35xxNumberSensors(D6,D7);
-      //Set the max current in ma if you like. 
+      //Uncomment the following lines to set the max current in milliamp if you like. 
       //Fixed: 5v, 9v, 12v, 15v, 20v / PPS: pps1, pps2
       //Please note that the max current is limited by the board you are using.
       //If you set a higher value, the chip will likely overheat. Be careful!
-      sw35xxNumberSensors->setMaxCurrentsFixed(5000,5000,5000,5000,5000);
-      sw35xxNumberSensors->setMaxCurrentsPPS(5000,5000);
+      //sw35xxNumberSensors->setMaxCurrentsFixed(5000,5000,5000,5000,5000);
+      //sw35xxNumberSensors->setMaxCurrentsPPS(5000,5000);
       App.register_component(sw35xxNumberSensors);
       return {sw35xxNumberSensors->inputVoltageSensor,sw35xxNumberSensors->outputVoltageSensor,sw35xxNumberSensors->outputCurrent1Sensor,sw35xxNumberSensors->outputCurrent2Sensor};
     sensors:
